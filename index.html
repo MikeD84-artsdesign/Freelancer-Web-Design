@@ -383,49 +383,39 @@
             line-height: 1.6;
         }
 
-        /* Contact Section */
-      /* Center all elements in the section */
+    
+
 .contact-section {
+    padding: 6rem 0;
     text-align: center;
-    padding: 60px 20px;
-    background-color: #121212; /* Matching your screenshot background */
-    color: white;
+    background-color: var(--bg-dark);
 }
 
-/* 1. HIGH-VISIBILITY EMAIL */
+/* This is the magic fix for centering the email */
+.email-centering-wrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    width: 100%;
+    margin: 1.5rem 0 2.5rem 0; /* Space: top (below button) and bottom (above icons) */
+}
+
 .contact-email {
-    display: inline-block;
-    font-size: 1.8rem; /* Larger size */
-    font-weight: bold;
+    color: var(--text-secondary); /* Changes it from yellow to your site's grey */
     text-decoration: none;
-    margin: 10px 0;
-    
-    /* Neon Lightning Effect */
-    color: #fffb00; 
-    text-shadow: 0 0 10px rgba(255, 251, 0, 0.8), 
-                 0 0 20px rgba(255, 251, 0, 0.4);
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .contact-email:hover {
-    color: #ffffff;
-    text-shadow: 0 0 20px #00d2ff, 0 0 40px #00d2ff;
-    transform: scale(1.05);
+    color: var(--accent-primary); /* Turns orange when you hover */
 }
 
-/* 2. BUTTON SPACING */
-.cta-buttons {
-    display: block; /* Ensures it takes full width */
-    margin: 20px auto 40px auto; /* 'auto' centers the div itself if it has a width */
-    text-align: center; /* Centers the button link inside */
-
-}
-
-/* 3. ICON SPACING & SIZE */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px; /* This adds the space between icons you requested */
+    gap: 2rem;
+}
 }
 
 .social-link {
@@ -695,26 +685,27 @@
         </section>
 
         <!-- Contact Section -->
-     <section class="contact-section" id="contact">
-    <h2 class="section-title">Let's Create Something Amazing</h2>
-    <p class="section-subtitle">
-        Have a project in mind? I'd love to hear about it. Let's discuss how we 
-        can work together to bring your vision to life.
-    </p>
+   <section class="contact-section" id="contact">
+    <div class="container"> <h2 class="section-title">Let's Create Something Amazing</h2>
+        <p class="section-subtitle">
+            Have a project in mind? I'd love to hear about it. Let's discuss how we 
+            can work together to bring your vision to life.
+        </p>
 
-    <div class="cta-buttons">
-        <a href="mailto:deleonmike84@gmail.com" class="btn btn-primary">Get In Touch</a>
-    </div>
+        <div class="cta-buttons">
+            <a href="mailto:deleonmike84@gmail.com" class="btn btn-primary">Get In Touch</a>
+        </div>
 
-    <div class="email-container">
-        <a href="mailto:deleonmike84@gmail.com" class="contact-email">deleonmike84@gmail.com</a>
-    </div>
+        <div class="email-centering-wrapper">
+            <a href="mailto:deleonmike84@gmail.com" class="contact-email">deleonmike84@gmail.com</a>
+        </div>
 
-    <div class="social-links">
-        <a href="#" class="social-link yt" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="social-link li" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#" class="social-link fb" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="social-link ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <div class="social-links">
+            <a href="#" class="social-link yt"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-link li"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="social-link fb"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-link ig"><i class="fa-brands fa-instagram"></i></a>
+        </div>
     </div>
 </section>
 
