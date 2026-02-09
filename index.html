@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Freelancer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        
         :root {
             --bg-dark: #0a0a0a;
             --bg-card: #1a1a1a;
@@ -382,72 +384,64 @@
         }
 
         /* Contact Section */
-        .contact-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            padding: 4rem;
-            text-align: center;
-            margin: 4rem 0;
-        }
+      /* Center all elements in the section */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #121212; /* Matching your screenshot background */
+    color: white;
+}
 
-        .contact-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
+/* 1. HIGH-VISIBILITY EMAIL */
+.contact-email {
+    display: inline-block;
+    font-size: 1.8rem; /* Larger size */
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px 0;
+    
+    /* Neon Lightning Effect */
+    color: #fffb00; 
+    text-shadow: 0 0 10px rgba(255, 251, 0, 0.8), 
+                 0 0 20px rgba(255, 251, 0, 0.4);
+    transition: all 0.3s ease;
+}
 
-        .contact-description {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.contact-email:hover {
+    color: #ffffff;
+    text-shadow: 0 0 20px #00d2ff, 0 0 40px #00d2ff;
+    transform: scale(1.05);
+}
 
-        .contact-email {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-primary);
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
+/* 2. BUTTON SPACING */
+.cta-buttons {
+    display: block; /* Ensures it takes full width */
+    margin: 20px auto 40px auto; /* 'auto' centers the div itself if it has a width */
+    text-align: center; /* Centers the button link inside */
 
-        .contact-email:hover {
-            color: var(--accent-secondary);
-            transform: scale(1.05);
-        }
+}
 
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
+/* 3. ICON SPACING & SIZE */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* This adds the space between icons you requested */
+}
 
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
+.social-link {
+    font-size: 28px; /* Slightly larger for better visibility */
+    color: #888; /* Gray by default like your image */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 
-        .social-link:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: translateY(-3px);
-        }
+/* Hover colors to make it feel alive */
+.social-link:hover {
+    transform: translateY(-5px);
+}
+.social-link.yt:hover { color: #FF0000; }
+.social-link.li:hover { color: #0077B5; }
+.social-link.fb:hover { color: #1877F2; }
+.social-link.ig:hover { color: #E4405F; }
 
         /* Footer */
         footer {
@@ -701,23 +695,30 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <h2 class="contact-title">Let's Create Something Amazing</h2>
-            <p class="contact-description">
-                Have a project in mind? I'd love to hear about it. Let's discuss how we can work together to bring your vision to life.
-            </p>
-            <a href="mailto:deleonmike84@gmail.com" class="contact-email"deleonmike84@gmail.com</a>
-            <div class="cta-buttons">
-                <a href="mailto:deleonmike84@gmail.com" class="btn btn-primary">Get In Touch</a>
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-link" title="LinkedIn">💼</a>
-                <a href="#" class="social-link" title="Dribbble">🎨</a>
-                <a href="#" class="social-link" title="GitHub">💻</a>
-                <a href="#" class="social-link" title="Twitter">🐦</a>
-                <a href="#" class="social-link" title="Instagram">📷</a>
-            </div>
-        </section>
+       <section class="contact-section" id="contact">
+    <h2 class="contact-title">Let's Create Something Amazing</h2>
+    <p class="contact-description">
+        Have a project in mind? I'd love to hear about it. Let's discuss how we 
+        can work together to bring your vision to life.
+    </p>
+    
+    <div class="email-container">
+        <a href="mailto:deleonmike84@gmail.com" class="contact-email">
+            <i class="fa-solid fa-bolt"></i> deleonmike84@gmail.com
+        </a>
+    </div>
+
+    <div class="cta-buttons">
+        <a href="mailto:deleonmike84@gmail.com" class="btn btn-primary">Get In Touch</a>
+    </div>
+
+    <div class="social-links">
+        <a href="#" class="social-link yt" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-link li" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" class="social-link fb" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#" class="social-link ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+</section>
 
         <!-- Footer -->
         <footer>
