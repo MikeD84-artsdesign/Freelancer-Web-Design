@@ -391,16 +391,23 @@
     background-color: var(--bg-dark);
 }
 
-/* This is the magic fix for centering the email */
+.contact-section .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0 0 0; /* Space below the subtitle */
+}
+
 .email-centering-wrapper {
     display: flex;
-    justify-content: center; /* Centers horizontally */
+    justify-content: center;
     width: 100%;
-    margin: 1.5rem 0 2.5rem 0; /* Space: top (below button) and bottom (above icons) */
+    margin: 1.5rem 0 2.5rem 0;
 }
 
 .contact-email {
-    color: var(--text-secondary); /* Changes it from yellow to your site's grey */
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 500;
@@ -408,7 +415,7 @@
 }
 
 .contact-email:hover {
-    color: var(--accent-primary); /* Turns orange when you hover */
+    color: var(--accent-primary);
 }
 
 .social-links {
@@ -416,23 +423,22 @@
     justify-content: center;
     gap: 2rem;
 }
-}
 
 .social-link {
-    font-size: 28px; /* Slightly larger for better visibility */
-    color: #888; /* Gray by default like your image */
+    font-size: 28px;
+    color: #888;
     transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
-/* Hover colors to make it feel alive */
 .social-link:hover {
     transform: translateY(-5px);
 }
+
 .social-link.yt:hover { color: #FF0000; }
 .social-link.li:hover { color: #0077B5; }
 .social-link.fb:hover { color: #1877F2; }
 .social-link.ig:hover { color: #E4405F; }
-
         /* Footer */
         footer {
             text-align: center;
