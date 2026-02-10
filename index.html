@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+
         
         :root {
             --bg-dark: #0a0a0a;
@@ -120,16 +121,14 @@
             width: 100%;
         }
 
-        /* Hero Section */
-        .hero {f
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 4rem 0;
-        }
-
-        .hero-content {
+       /* Hero Section */
+.hero {
+    min-height: 100vh; /* Changed from 85vh to 100vh */
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 6rem 0 4rem 0;
+}        .hero-content {
             max-width: 800px;
         }
 
@@ -213,7 +212,7 @@
         /* About Section */
         .about-section {
             min-height: 100vh;
-            padding: 8rem 0;
+            padding: 8rem 0 6rem 0;
             background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(26, 26, 26, 0.5) 100%);
         }
 
@@ -702,6 +701,7 @@
         <div class="nav-container">
             <div class="logo">Portfolio</div>
             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#work">Work</a></li>
@@ -712,7 +712,7 @@
 
     <div class="container">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-content">
                 <div class="hero-subtitle">Creative Freelancer</div>
                 <h1 class="hero-title">
@@ -736,13 +736,14 @@
             <div class="about-content">
                 <!-- Image Container with Rotating Photos -->
                 <div class="about-image-container">
-                    <!-- Add your images here - they will rotate automatically -->
-                    <!-- Example: <img src="your-photo-1.jpg" class="about-image" alt="Your Name"> -->
-                    <!-- Example: <img src="your-photo-2.jpg" class="about-image" alt="Your Name"> -->
-                    <!-- Example: <img src="your-photo-3.jpg" class="about-image" alt="Your Name"> -->
-                    
-                    <!-- Placeholder - Remove this when you add your photos -->
-                    <div class="image-placeholder">
+                   <div class="about-image-container">
+    <img src="photo1.jpg" class="about-image" alt="Michael Deleon">
+    <img src="photo2.jpg" class="about-image" alt="Michael Deleon">
+    <img src="photo3.jpg" class="about-image" alt="Michael Deleon">
+    <img src="photo4.jpg" class="about-image" alt="Michael Deleon">
+    <img src="photo5.jpg" class="about-image" alt="Michael Deleon">
+    <img src="photo6.jpg" class="about-image" alt="Michael Deleon">
+</div>                    <div class="image-placeholder">
                         <i class="fas fa-user-circle"></i>
                         <p>Add Your Photos Here</p>
                     </div>
