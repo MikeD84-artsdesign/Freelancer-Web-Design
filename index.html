@@ -57,11 +57,24 @@
 
         /* Navigation */
         nav {
-            padding: 2rem 0;
+            padding: 1.5rem 0;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            animation: fadeInDown 0.8s ease-out;
         }
 
         .logo {
@@ -195,6 +208,167 @@
             border-color: var(--accent-primary);
             color: var(--accent-primary);
             transform: translateY(-2px);
+        }
+
+       /* About Section */
+.about-section {
+    min-height: 100vh;
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(26, 26, 26, 0.5) 100%);
+}
+
+/* Optimized About Section with Wide Image */
+.about-content {
+    display: grid;
+    /* This makes the image section (1.6) much larger than the text section (1) */
+    grid-template-columns: 1.6fr 1fr; 
+    gap: 3rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* This allows the image to 'leak' out of the center if needed */
+    position: relative; 
+
+}
+
+.about-image-container {
+    position: relative;
+    width: 100%;
+    /* HEIGHT: Adjust this so it lands on the 2nd line of 'My Story' */
+    height: 800px; 
+    
+    /* LEFT POSITION: This pulls the box into the void on the left */
+    margin-left: -15rem; 
+    
+    /* TOP POSITION: This aligns the top with your 'Hello' text */
+    margin-top: 6rem; 
+    
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+    padding: 2rem 0;
+    /* Ensures text doesn't feel cramped with the wider image */
+    padding-left: 1rem;
+}
+/* Ensure images within the container still fit perfectly */
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        .about-image.fade-out {
+            opacity: 0;
+        }
+
+        .about-image.fade-in {
+            opacity: 1;
+        }
+
+        /* Placeholder for when no image is uploaded */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bg-card), #2a2a2a);
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .image-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text {
+            padding: 2rem 0;
+        }
+
+        .about-label {
+            color: var(--accent-primary);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-story {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-primary);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .about-story h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .about-story p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-top: 0.2rem;
+        }
+
+        .highlight-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-text p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
         }
 
         /* Stats Section */
@@ -383,64 +557,72 @@
             line-height: 1.6;
         }
 
-    
+        .contact-section {
+            padding: 6rem 0;
+            text-align: center;
+            background-color: var(--bg-dark);
+        }
 
-.contact-section {
-    padding: 6rem 0;
-    text-align: center;
-    background-color: var(--bg-dark);
-}
+        .contact-section .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 0 0;
+        }
 
-.contact-section .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin: 2rem 0 0 0; /* Space below the subtitle */
-}
+        .email-centering-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 1.5rem 0 2.5rem 0;
+        }
 
-.email-centering-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 1.5rem 0 2.5rem 0;
-}
+        .contact-email {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-shadow: 
+                0 0 10px rgba(255, 107, 53, 0.5),
+                0 0 20px rgba(255, 107, 53, 0.3),
+                0 0 30px rgba(255, 107, 53, 0.2);
+        }
 
-.contact-email {
-    color: var(--text-secondary); /* Changes it from yellow to your site's grey */
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    
-;
-}
+        .contact-email:hover {
+            color: var(--accent-secondary);
+            text-shadow: 
+                0 0 15px rgba(247, 147, 30, 0.8),
+                0 0 30px rgba(247, 147, 30, 0.5),
+                0 0 45px rgba(247, 147, 30, 0.3);
+            transform: scale(1.05);
+        }
 
-.contact-email:hover {
-      color: var(--accent-primary); /* Turns orange when you hover */
-};
-}
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
 
-.social-link {
-    font-size: 28px;
-    color: #888;
-    transition: color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-}
+        .social-link {
+            font-size: 2rem;
+            color: #888;
+            transition: color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
 
-.social-link:hover {
-    transform: translateY(-5px);
-}
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
 
-.social-link.yt:hover { color: #FF0000; }
-.social-link.li:hover { color: #0077B5; }
-.social-link.fb:hover { color: #1877F2; }
-.social-link.ig:hover { color: #E4405F; }
+        .social-link.yt:hover { color: #FF0000; }
+        .social-link.li:hover { color: #0077B5; }
+        .social-link.fb:hover { color: #1877F2; }
+        .social-link.ig:hover { color: #E4405F; }
+
         /* Footer */
         footer {
             text-align: center;
@@ -491,6 +673,19 @@
                 min-height: 70vh;
             }
 
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image-container {
+                height: 400px;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+
             .stats {
                 grid-template-columns: 1fr;
             }
@@ -516,9 +711,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation -->
-        <nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
             <div class="logo">Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -526,8 +721,10 @@
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
 
+    <div class="container">
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
@@ -545,7 +742,85 @@
                 </div>
             </div>
         </section>
+    </div>
 
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <!-- Image Container with Rotating Photos -->
+                <div class="about-image-container">
+                    <!-- Add your images here - they will rotate automatically -->
+                    <!-- Example: <img src="your-photo-1.jpg" class="about-image" alt="Your Name"> -->
+                    <!-- Example: <img src="your-photo-2.jpg" class="about-image" alt="Your Name"> -->
+                    <!-- Example: <img src="your-photo-3.jpg" class="about-image" alt="Your Name"> -->
+                    
+                    <!-- Placeholder - Remove this when you add your photos -->
+                    <div class="image-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                        <p>Add Your Photos Here</p>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div class="about-text">
+                    <div class="about-label">About Me</div>
+                    <h2 class="about-title">Passionate About Creating Digital Excellence</h2>
+                    
+                    <p class="about-description">
+                        Hello! I'm a creative freelancer with a deep passion for transforming ideas into beautiful, functional digital experiences. With over 5 years of experience in the industry, I've had the privilege of working with diverse clients across various sectors.
+                    </p>
+                    
+                    <p class="about-description">
+                        My journey in design and development started from a simple curiosity about how things work on the web. That curiosity evolved into a full-fledged career where I combine creativity with technical expertise to deliver exceptional results.
+                    </p>
+
+                    <div class="about-story">
+                        <h3>My Story</h3>
+                        <p>
+                            Every project I undertake is an opportunity to learn, grow, and push the boundaries of what's possible. I believe in the power of collaboration and always strive to understand my clients' vision deeply before bringing it to life.
+                        </p>
+                        <p>
+                            When I'm not crafting digital experiences, you'll find me exploring new design trends, learning emerging technologies, or sharing knowledge with the creative community.
+                        </p>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket highlight-icon"></i>
+                            <div class="highlight-text">
+                                <h4>Innovation Driven</h4>
+                                <p>Always exploring cutting-edge solutions</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-users highlight-icon"></i>
+                            <div class="highlight-text">
+                                <h4>Client-Focused</h4>
+                                <p>Your success is my priority</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-award highlight-icon"></i>
+                            <div class="highlight-text">
+                                <h4>Quality First</h4>
+                                <p>Attention to every detail</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-clock highlight-icon"></i>
+                            <div class="highlight-text">
+                                <h4>Timely Delivery</h4>
+                                <p>Meeting deadlines consistently</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
         <!-- Stats -->
         <div class="stats">
             <div class="stat-card">
@@ -576,42 +851,42 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎨</div>
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
                     <h3 class="service-title">Web Design</h3>
                     <p class="service-description">
                         Creating stunning, user-friendly interfaces that captivate audiences and drive engagement through thoughtful design principles.
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💻</div>
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
                     <h3 class="service-title">Development</h3>
                     <p class="service-description">
                         Building responsive, high-performance websites and applications using modern technologies and best practices.
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📱</div>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3 class="service-title">Brand Identity</h3>
                     <p class="service-description">
                         Developing cohesive visual identities that communicate your brand's values and resonate with your target audience.
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🚀</div>
+                    <div class="service-icon"><i class="fas fa-rocket"></i></div>
                     <h3 class="service-title">Digital Strategy</h3>
                     <p class="service-description">
                         Crafting comprehensive digital strategies to enhance online presence and achieve measurable business goals.
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
+                    <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
                     <h3 class="service-title">UI/UX Design</h3>
                     <p class="service-description">
                         Designing intuitive user experiences that balance aesthetics with functionality for optimal user satisfaction.
                     </p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
                     <h3 class="service-title">Consulting</h3>
                     <p class="service-description">
                         Providing expert guidance on design, development, and digital transformation to help your business thrive.
@@ -693,33 +968,42 @@
         </section>
 
         <!-- Contact Section -->
-   <section class="contact-section" id="contact">
-    <div class="container"> <h2 class="section-title">Let's Create Something Amazing</h2>
-        <p class="section-subtitle">
-            Have a project in mind? I'd love to hear about it. Let's discuss how we 
-            can work together to bring your vision to life.
-        </p>
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Create Something Amazing</h2>
+                <p class="section-subtitle">
+                    Have a project in mind? I'd love to hear about it. Let's discuss how we 
+                    can work together to bring your vision to life.
+                </p>
 
-        <div class="cta-buttons">
-            <a href="mailto:deleonmike84@gmail.com" class="btn btn-primary">Get In Touch</a>
-        </div>
+                <div class="cta-buttons">
+                    <a href="mailto:deleonmike84@gmail.com?subject=Project Inquiry&body=Hi, I'd like to discuss a project with you." class="btn btn-primary">Get In Touch</a>
+                </div>
 
-        <div class="email-centering-wrapper">
-            <a href="mailto:deleonmike84@gmail.com" class="contact-email">deleonmike84@gmail.com</a>
-        </div>
+                <div class="email-centering-wrapper">
+                    <a href="mailto:deleonmike84@gmail.com" class="contact-email">deleonmike84@gmail.com</a>
+                </div>
 
-        <div class="social-links">
-            <a href="#" class="social-link yt"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" class="social-link li"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" class="social-link fb"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="social-link ig"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-    </div>
-</section>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@MikeyD0531" class="social-link yt" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/michael-deleon84/" class="social-link li" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://web.facebook.com/deleonmikey84/" class="social-link fb" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/michaeldeleonvafreelance/" class="social-link ig" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2026 Your Name. All rights reserved. Crafted with passion and precision.</p>
+            <p>&copy; 2026 M.Deleon-Freelance. All rights reserved. Crafted with Passion and Precision.</p>
         </footer>
     </div>
 
@@ -737,6 +1021,28 @@
                 }
             });
         });
+
+        // Photo rotation for About section
+        const images = document.querySelectorAll('.about-image');
+        if (images.length > 0) {
+            let currentIndex = 0;
+            
+            // Show first image
+            images[0].classList.add('fade-in');
+            
+            // Rotate images every 5 seconds
+            setInterval(() => {
+                images[currentIndex].classList.remove('fade-in');
+                images[currentIndex].classList.add('fade-out');
+                
+                currentIndex = (currentIndex + 1) % images.length;
+                
+                setTimeout(() => {
+                    images.forEach(img => img.classList.remove('fade-out'));
+                    images[currentIndex].classList.add('fade-in');
+                }, 1000);
+            }, 5000);
+        }
 
         // Intersection Observer for scroll animations
         const observerOptions = {
