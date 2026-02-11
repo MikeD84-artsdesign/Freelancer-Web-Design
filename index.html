@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -548,7 +549,41 @@
             color: var(--text-secondary);
             line-height: 1.6;
         }
+/* Container to put them on the same line */
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between the button and the email */
+    margin: 60px 0 120px 0;
+}
 
+/* The Email Oval Design */
+.email-oval {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid #ff7b2e; /* Matches your orange theme */
+    border-radius: 1px;       /* Makes it a perfect oval */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgba(255, 123, 46, 0.1); /* Subtle transparent orange fill */
+}
+
+.email-oval:hover {
+    background: #ff7b2e;
+    color: #000; /* Text turns dark when hovered for contrast */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 123, 46, 0.4);
+}
+
+/* Ensure the primary button is the same height */
+.btn-primary {
+    padding: 12px 28px;
+    border-radius: 50px;
+    /* ... keep your existing button styles ... */
+}
         .contact-section {
             padding: 6rem 0;
             text-align: center;
@@ -591,30 +626,77 @@
             transform: scale(1.05);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
+    /* Updated Social Links with Glowing Effect */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    
+}
+/* Container for each individual icon + label */
+.social-link {
+    display: flex;
+    flex-direction: column; /* Stacks text BELOW the icon */
+    align-items: center;    /* Centers everything horizontally */
+    gap: 12px;              /* Space between icon and text */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 100px;       /* Ensures enough breathing room for the outline */
+}
 
-        .social-link {
-            font-size: 2rem;
-            color: #888;
-            transition: color 0.3s ease, transform 0.3s ease;
-            text-decoration: none;
-            padding: 0.5rem;
-        }
+/* Fixes the "Icon got smaller" issue */
+.social-link i {
+    font-size: 2rem;      /* Explicitly sets the icon size back to large */
+    display: block;
+}
 
-        .social-link:hover {
-            transform: translateY(-5px);
-        }
+/* The Label (YouTube, LinkedIn, etc.) */
+.icon-name {
+    font-size: 0.5rem;      /* Clean, readable size */
+    color: #ffffff;         /* Pure white text as requested */
+    font-weight: 500;
+    text-transform: capitalize; 
+    letter-spacing: 0.5px;
+}
 
-        .social-link.yt:hover { color: #FF0000; }
-        .social-link.li:hover { color: #0077B5; }
-        .social-link.fb:hover { color: #1877F2; }
-        .social-link.ig:hover { color: #E4405F; }
+/* Hover States - Glow & Lift */
+.social-link:hover {
+    transform: translateY(-8px);
+}
 
+.social-link.yt i { color: #FF0000; text-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
+.social-link.li i { color: #0077B5; text-shadow: 0 0 15px rgba(0, 119, 181, 0.6); }
+.social-link.fb i { color: #1877F2; text-shadow: 0 0 15px rgba(24, 119, 242, 0.6); }
+.social-link.ig i { color: #E4405F; text-shadow: 0 0 15px rgba(228, 64, 95, 0.6); }
+
+/* Permanent Glow & Brand Colors */
+.social-link.yt { 
+    color: #FF0000; 
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+}
+.social-link.li { 
+    color: #0077B5; 
+    text-shadow: 0 0 10px rgba(0, 119, 181, 0.5); 
+}
+.social-link.fb { 
+    color: #1877F2; 
+    text-shadow: 0 0 10px rgba(24, 119, 242, 0.5); 
+}
+.social-link.ig { 
+    color: #E4405F; 
+    text-shadow: 0 0 10px rgba(228, 64, 95, 0.5); 
+}
+
+/* Hover Effect: Intensify the glow and lift */
+.social-link:hover {
+    transform: translateY(-8px) scale(1.1);
+}
+
+.social-link.yt:hover { text-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
+.social-link.li:hover { text-shadow: 0 0 20px rgba(0, 119, 181, 0.8); }
+.social-link.fb:hover { text-shadow: 0 0 20px rgba(24, 119, 242, 0.8); }
+.social-link.ig:hover { text-shadow: 0 0 20px rgba(228, 64, 95, 0.8); }
         /* Footer */
         footer {
             text-align: center;
@@ -967,30 +1049,44 @@
                     can work together to bring your vision to life.
                 </p>
 
-                <div class="cta-buttons">
-                    <a href="mailto:deleonmike84@gmail.com?subject=Project Inquiry&body=Hi, I'd like to discuss a project with you." class="btn btn-primary">Get In Touch</a>
-                </div>
+                <div class="contact-actions">
+    <a href="mailto:deleonmike84@gmail.com" class="btn-primary icon-only">  
+        <i class="fas fa-envelope"></i>
+    </a>
+    
+    <a href="mailto:deleonmike84@gmail.com" class="email-oval">
+        deleonmike84@gmail.com
+    </a>
+</div>
 
-                <div class="email-centering-wrapper">
-                    <a href="mailto:deleonmike84@gmail.com" class="contact-email">deleonmike84@gmail.com</a>
-                </div>
 
+                
+<section>        
+<h4>Connect & Follow!</h4>
+
+</section>
                 <div class="social-links">
                     <a href="https://www.youtube.com/@MikeyD0531" class="social-link yt" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-youtube"></i>
+                        <span class="icon-name">YouTube</span>
                     </a>
                     <a href="https://www.linkedin.com/in/michael-deleon84/" class="social-link li" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-linkedin"></i>
+                        <span class="icon-name">LinkedIn</span>
                     </a>
                     <a href="https://web.facebook.com/deleonmikey84/" class="social-link fb" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-facebook"></i>
+                        <span class="icon-name">Facebook</span>
                     </a>
                     <a href="https://www.instagram.com/michaeldeleonvafreelance/" class="social-link ig" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram"></i>
+                        <span class="icon-name">instagram</span>
+                        
                     </a>
                 </div>
             </div>
         </section>
+
 
         <!-- Footer -->
         <footer>
