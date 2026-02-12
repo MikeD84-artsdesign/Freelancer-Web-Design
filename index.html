@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.Deleon - Website Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <style>
 
-        
+         .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* REMOVE global padding that creates "borders" */
+    padding: 0 !important; 
+    overflow: hidden; 
+    width: 100vw; /* Force viewport width */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the area without stretching */
+    filter: blur(8px) brightness(0.4); /* This creates that "Blurry Rainy" look */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.4); /* Darkens the video further for text contrast */
+    z-index: 1;
+}
+
+/* Ensure content stays above video */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px; /* Matches your container width */
+    margin: 0 auto;
+    padding-right: 0 2rem;
+}
         :root {
             --bg-dark: #0a0a0a;
             --bg-card: #1a1a1a;
@@ -191,11 +240,13 @@
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             color: white;
             box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+            
         }
 
         .btn-secondary {
@@ -213,8 +264,13 @@
         /* About Section */
         .about-section {
             min-height: 100vh;
-            padding: 8rem 0 6rem 0;
-            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(26, 26, 26, 0.5) 100%);
+            padding: 5rem 0 2rem 0;
+            background: #1a2f2a;
+            border-top: 5px solid rgba(170, 255, 215, 0.1);
+    border-bottom: 2px solid #2a4d44;
+    
+    position: relative;
+    z-index: 1;
         }
 
         /* Adjusted for alignment with "Creating Digital" */
@@ -407,24 +463,31 @@
 
         /* Services Section */
         .section {
-            padding: 6rem 0;
+            min-height: 100vh;
+            background-color: #c49a45!important; /* Espresso Brown */
+    padding: 6rem 0;
+    
+    /* Boundary Borders */
+    border-top: 5px solid #3d2b1f; 
+    border-bottom: 1px solid #3d2b1f;
         }
 
         .section-header {
-            text-align: center;
+            color:#3d2b1f;
+            text-align: left;
             margin-bottom: 4rem;
         }
 
         .section-title {
+            color: #bab5b1;
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
             margin-bottom: 1rem;
         }
-
         .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+            color:#3d2b1f;
+            font-size: 1.5rem;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -436,8 +499,8 @@
         }
 
         .service-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: #261c18 !important; /* Coffee Bean Brown */
+            border: 1px solid #3d2b1f;
             border-radius: 20px;
             padding: 3rem 2rem;
             transition: all 0.4s ease;
@@ -488,8 +551,33 @@
             color: var(--text-secondary);
             line-height: 1.7;
         }
-
+        
+    
         /* Portfolio Section */
+
+        #work {
+            min-height: 100vh;
+    background-color: #5a3c23 !important; /* Warm Latte Brown */
+    padding: 8rem 0;
+    /* Boundary Borders */
+    border-top: 5px solid #3d2b1f;
+    border-bottom: 3px solid #d1b280; /* Thicker Spanish Latte floor line */
+}
+ #work .section-title {
+    color: #bab5b1; /* Light Grey/Latte text */
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+
+       #work .section-subtitle {
+           color: #d1b280; /* Spanish Latte color */
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -497,8 +585,8 @@
         }
 
         .portfolio-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: #1b1412
+            border: 1px solid #3d2b1f;
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -537,7 +625,7 @@
         }
 
         .portfolio-category {
-            color: var(--accent-primary);
+            color: color: #d1b280
             font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -554,7 +642,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Space between the button and the email */
+    gap: 2px; /* Space between the button and the email */
     margin: 60px 0 120px 0;
 }
 
@@ -584,19 +672,48 @@
     border-radius: 50px;
     /* ... keep your existing button styles ... */
 }
-        .contact-section {
-            padding: 6rem 0;
-            text-align: center;
-            background-color: var(--bg-dark);
+       .contact-section {
+            min-height: 100vh;
+    padding: 10rem 0; /* Increased padding for better framing */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* Update 'your-image.jpg' with your actual filename */
+    background-image: url("images/hand-drawn-coffee-concept-background-free-vector.jpg.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
         }
 
-        .contact-section .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin: 2rem 0 0 0;
-        }
+       .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.75); /* Dark tint */
+    z-index: 1;
+}
+
+/* Keeping the content above the image and tint */
+.contact-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensuring title and subtitle are visible against dark bg */
+#contact .section-title {
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+#contact .section-subtitle {
+    color: #e0e0e0;
+    margin-bottom: 3rem;
+}
 
         .email-centering-wrapper {
             display: flex;
@@ -700,9 +817,9 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 0;
+            padding: 0.5rem 0;
             color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
+            border-top: 5px solid var(--border-color);
         }
 
         /* Animations */
@@ -744,7 +861,7 @@
             }
 
             .hero {
-                min-height: 70vh;
+                min-height: 100vh;
             }
 
             .about-content {
@@ -770,7 +887,7 @@
             }
 
             .contact-section {
-                padding: 2rem;
+                padding: 4rem;
             }
 
             .cta-buttons {
@@ -814,8 +931,15 @@
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">Let's Work Together</a>
                     <a href="#work" class="btn btn-secondary">View My Work</a>
+
                 </div>
             </div>
+            <div class="video-background">
+        <div class="video-overlay"></div>
+        <video autoplay muted loop playsinline id="heroVideo">
+            <source src="Coffee.mp4.mp4" type="video/mp4">
+            </video>
+    </div>
         </section>
     </div>
 
@@ -831,10 +955,6 @@
                 <img src="images/Photo3.jpg.jpg" class="about-image" alt="Michael Deleon">
                 <img src="images/Photo2.webp.webp" class="about-image" alt="Michael Deleon">
             </div>
-
-            <!-- About Text -->
-            <div class="about-text">
-
                 <!-- About Text -->
                 <div class="about-text">
                     <div class="about-label">About Me</div>
@@ -893,31 +1013,10 @@
         </div>
     </section>
 
-    <div class="container">
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">30+</div>
-                <div class="stat-label">Happy Clients</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Satisfaction Rate</div>
-            </div>
-        </div>
-
         <!-- Services Section -->
         <section class="section" id="services">
-            <div class="section-header">
-                <h2 class="section-title">What I Do</h2>
+           <div class="container"> <div class="section-header">
+                <h2 class="section-title">Services</h2>
                 <p class="section-subtitle">
                     Specialized services tailored to bring your vision to life
                 </p>
@@ -970,7 +1069,7 @@
 
         <!-- Portfolio Section -->
         <section class="section" id="work">
-            <div class="section-header">
+            <div class="container"> <div class="section-header">
                 <h2 class="section-title">Featured Work</h2>
                 <p class="section-subtitle">
                     A selection of recent projects that showcase my skills and creativity
