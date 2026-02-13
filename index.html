@@ -38,7 +38,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures video fills the area without stretching */
-    filter: blur(8px) brightness(0.4); /* This creates that "Blurry Rainy" look */
+    filter: blur(5px) brightness(0.4); /* This creates that "Blurry Rainy" look */
 }
 
 .video-overlay {
@@ -56,7 +56,8 @@
     position: relative;
     z-index: 2;
     max-width: 900px; /* Matches your container width */
-    margin: 0 auto;
+    margin-left: 10%;    /* Moves the text away from the left edge slightly */
+    margin-right: auto; /* Ensures it doesn't stay stuck in the center */
     padding-right: 0 2rem;
 }
         :root {
@@ -108,7 +109,7 @@
 
         /* Navigation */
         nav {
-            padding: 1.3rem 0;
+            padding: 0.9rem 0;
             background: rgba(26, 26, 26, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid var(--border-color);
@@ -178,26 +179,29 @@
     align-items: center;
     position: relative;
     padding: 6rem 0 4rem 0;
-}        .hero-content {
-            max-width: 800px;
+}     
+   .hero-content {
+            max-width: 780px;
         }
 
         .hero-subtitle {
             color: var(--accent-primary);
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 200;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            margin-left: 2%;    /* Moves the text away from the left edge slightly */
+            margin-right: auto;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
@@ -207,71 +211,151 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
+             margin-left: 15%;   
         }
 
         .hero-description {
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: #918845
             margin-bottom: 2.5rem;
             line-height: 1.8;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
+       .cta-buttons {
+    display: flex;
+    gap: 20px; /* Space between the two buttons */
+    margin-top: 2.5rem;
+    animation: fadeInUp 0.8s ease-out 0.8s both;
+}
 
-        .btn {
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
+/* Base Button Styling - Ensures uniform size */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px; /* Uniform padding for both */
+    min-width: 200px;    /* Ensures they have the same width */
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    text-align: center;
+}
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-            
-        }
+/* The Primary Button (Orange Gradient) */
+.btn-primary {
+    background: transparent;
+    color: white;
+    border: 2px solid transparent; /* Keeps sizing identical to the outlined button */
+   
+}
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
-            
-        }
+.btn-primary:hover {
+    background: transparent;
+    color: #da8231; /* Dark coffee text for contrast on hover */
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 5px 2px rgba(241, 241, 241, 0.2);
+}
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border-color);
-        }
+/* The Secondary Button (Outline/Latte Style) */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border:transparent; /* Matches your Spanish Latte theme */
+}
 
-        .btn-secondary:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: translateY(-2px);
-        }
+.btn-secondary:hover {
+    background: transparent;
+    color: #918845; /* Dark coffee text for contrast on hover */
+    transform: translateY(-3px);
+    box-shadow: 0px 0px 5px 2px rgba(241, 241, 241, 0.2);
 
+}
+/* Container for the two icons */
+.hero-mini-icons {
+    display: flex;
+    gap: 120px; /* Space between the handshake and the book */
+    margin-top: 5px; /* Distance below the CTA buttons */
+    margin-left: 4%;
+    margin-right: auto;
+    animation: fadeInUp 0.8s ease-out 1.2s both; /* Slight delay for a polished entrance */
+}
+
+/* Individual icon and text layout */
+.mini-icon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #bab5b1; /* Using your latte/grey text color */
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Specific styling for the icons */
+.mini-icon-item i {
+    color: var(--accent-primary); /* Your theme's orange */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Small hover effect for the icons */
+.mini-icon-item:hover i {
+    transform: scale(1.2);
+}
         /* About Section */
         .about-section {
-            min-height: 100vh;
-            padding: 5rem 0 2rem 0;
-            background: #1a2f2a;
-            border-top: 5px solid rgba(170, 255, 215, 0.1);
-    border-bottom: 2px solid #2a4d44;
-    
+           min-height: 100vh;
+    padding: 5rem 0 2rem 0;
     position: relative;
+    overflow: hidden; /* Keeps the blur from "bleeding" outside the section */
     z-index: 1;
-        }
+    border-top: 5px solid rgba(170, 255, 215, 0.1);
+    border-bottom: 2px solid #2a4d44;
+}
+    .about-section::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Slight offset to prevent white edges from blur */
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    
+    /* Background settings moved here */
+    background-image: url("images/there-is-cuptea.avif"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Blur and Darken */
+    filter: blur(4px); /* Adjust the '8px' to your liking */
+    background-color: rgba(10, 10, 10, 0.75); /* Tint backup */
+    
+    z-index: -1;
+}
+
+/* Separate Overlay for Darkening (prevents blur from washing out colors) */
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.6); /* Extra darkening tint */
+    z-index: 0;
+}
+
+/* Ensure content stays sharp and on top */
+.about-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+        
 
         /* Adjusted for alignment with "Creating Digital" */
 .about-content {
@@ -344,14 +428,7 @@
             padding: 2rem 0;
         }
 
-        .about-label {
-            color: var(--accent-primary);
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
+
 
         .about-title {
             font-family: 'Playfair Display', serif;
@@ -420,58 +497,45 @@
             color: var(--text-secondary);
         }
 
-        /* Stats Section */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-            animation: fadeIn 0.8s ease-out 1s both;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-primary);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
 
         /* Services Section */
         .section {
             min-height: 100vh;
-            background-color: #c49a45!important; /* Espresso Brown */
-    padding: 6rem 0;
+            padding: 6rem 0;
+            position: relative;
+    overflow: hidden; /* Clips the blur edges */
+    z-index: 1;
+        }         
+/* The Blurry Background Layer for Services */
+.section::before {
+    content: '';
+    position: absolute;
+    top: -15px; /* Extra padding to hide blur artifacts */
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
     
-    /* Boundary Borders */
-    border-top: 5px solid #3d2b1f; 
-    border-bottom: 1px solid #3d2b1f;
-        }
+    background-image: url("images/nahhhhhh.avif"); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    
+    filter: blur(3px);
+    z-index: -1;
+}
 
+/* Dark Overlay to maintain contrast for the service cards */
+.section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 12, 10, 0.78); /* Deep tint for card pop */
+    z-index: 0;
+}
         .section-header {
             color:#3d2b1f;
             text-align: left;
@@ -486,7 +550,7 @@
             margin-bottom: 1rem;
         }
         .section-subtitle {
-            color:#3d2b1f;
+            color:#e6d263;
             font-size: 1.5rem;
             max-width: 600px;
             margin: 0 auto;
@@ -563,6 +627,55 @@
     border-top: 5px solid #3d2b1f;
     border-bottom: 3px solid #d1b280; /* Thicker Spanish Latte floor line */
 }
+/* Updated Work/Portfolio Section with Blurry Background */
+#work {
+    min-height: 100vh;
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+    /* Boundary Borders */
+    border-top: 5px solid #3d2b1f;
+    border-bottom: 3px solid #d1b280;
+}
+
+/* The Blurry Background Layer for Work Section */
+#work::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    
+    background-image: url("images/tablets.jpg"); /* Update your image path here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    filter: blur(2px); /* Slightly stronger blur for the work section */
+    z-index: -1;
+}
+
+/* Dark Overlay to ensure the portfolio cards and grey text are readable */
+#work::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 15, 12, 0.8); /* Deep coffee tint */
+    z-index: 0;
+}
+
+/* Keep the container and section headers above the background layers */
+#work .container {
+    position: relative;
+    z-index: 2;
+}
  #work .section-title {
     color: #bab5b1; /* Light Grey/Latte text */
     font-family: 'Playfair Display', serif;
@@ -638,43 +751,71 @@
             line-height: 1.6;
         }
 /* Container to put them on the same line */
+/* Container to manage the spacing between the two */
 .contact-actions {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2px; /* Space between the button and the email */
-    margin: 60px 0 120px 0;
+    gap: 2px; /* Creates physical space between the icon and the text */
+    margin: 50px 0;
+    position: relative;
+    z-index: 5;
 }
 
-/* The Email Oval Design */
-.email-oval {
-    display: inline-block;
-    padding: 12px 28px;
-    border: 2px solid #ff7b2e; /* Matches your orange theme */
-    border-radius: 1px;       /* Makes it a perfect oval */
-    color: #ffffff;
+/* Specific styling for the Circular Envelope Icon */
+.email-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: var(--accent-primary); /* Uses your theme's orange */
+    color: white;
+    border-radius: 10px ; /* Makes it a perfect circle */
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.3rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.email-icon-circle:hover {
+    transform: scale(1.1) rotate(10deg);
+    background: white;
+    color: var(--accent-primary);
+}
+
+/* Specific styling for the Email Oval Address */
+.email-oval-text {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 2px solid #d1b280; /* Your Spanish Latte accent color */
+    background: rgba(209, 178, 128, 0.05); /* Very subtle latte tint */
+    color: #ffffff;
+    border-radius: 10px; /* Maintains the oval shape */
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    background: rgba(255, 123, 46, 0.1); /* Subtle transparent orange fill */
 }
 
-.email-oval:hover {
-    background: #ff7b2e;
-    color: #000; /* Text turns dark when hovered for contrast */
+.email-oval-text:hover {
+    background: #d1b280; /* Fills with latte color on hover */
+    color: #1b1412; /* Dark coffee text for contrast */
+    box-shadow: 0 0 20px rgba(209, 178, 128, 0.4);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 123, 46, 0.4);
 }
-
+ 
 /* Ensure the primary button is the same height */
 .btn-primary {
     padding: 12px 28px;
     border-radius: 50px;
     /* ... keep your existing button styles ... */
 }
+
+
        .contact-section {
             min-height: 100vh;
-    padding: 10rem 0; /* Increased padding for better framing */
+    padding: 8rem 0; /* Increased padding for better framing */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -706,13 +847,13 @@
 
 /* Ensuring title and subtitle are visible against dark bg */
 #contact .section-title {
-    color: #ffffff;
+    color: #c96969;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 #contact .section-subtitle {
-    color: #e0e0e0;
-    margin-bottom: 3rem;
+    color: #52a160;
+    margin-bottom: 4rem;
 }
 
         .email-centering-wrapper {
@@ -737,18 +878,43 @@
         .contact-email:hover {
             color: var(--accent-secondary);
             text-shadow: 
-                0 0 15px rgba(247, 147, 30, 0.8),
+                0 0 15px rgba(50, 172, 193, 0.8),
                 0 0 30px rgba(247, 147, 30, 0.5),
                 0 0 45px rgba(247, 147, 30, 0.3);
             transform: scale(1.05);
         }
+/* Styling for the text and icon above social links */
+.social-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 0rem;
+    margin-top: 9rem;
+}
 
+.social-header i {
+    color: var(--accent-primary); /* Your theme's orange */
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.social-header h4 {
+    color: #bab5b1; /* Your Latte/Grey text color */
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0; /* Removes default heading margins */
+}
     /* Updated Social Links with Glowing Effect */
+    
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 4rem;
+    margin-top: 5rem;
     
 }
 /* Container for each individual icon + label */
@@ -756,7 +922,7 @@
     display: flex;
     flex-direction: column; /* Stacks text BELOW the icon */
     align-items: center;    /* Centers everything horizontally */
-    gap: 12px;              /* Space between icon and text */
+    gap: 14px;              /* Space between icon and text */
     text-decoration: none;
     transition: all 0.3s ease;
     min-width: 100px;       /* Ensures enough breathing room for the outline */
@@ -764,13 +930,13 @@
 
 /* Fixes the "Icon got smaller" issue */
 .social-link i {
-    font-size: 2rem;      /* Explicitly sets the icon size back to large */
+    font-size: 3rem;      /* Explicitly sets the icon size back to large */
     display: block;
 }
 
 /* The Label (YouTube, LinkedIn, etc.) */
 .icon-name {
-    font-size: 0.5rem;      /* Clean, readable size */
+    font-size: 0.8rem;      /* Clean, readable size */
     color: #ffffff;         /* Pure white text as requested */
     font-weight: 500;
     text-transform: capitalize; 
@@ -814,13 +980,43 @@
 .social-link.li:hover { text-shadow: 0 0 20px rgba(0, 119, 181, 0.8); }
 .social-link.fb:hover { text-shadow: 0 0 20px rgba(24, 119, 242, 0.8); }
 .social-link.ig:hover { text-shadow: 0 0 20px rgba(228, 64, 95, 0.8); }
-        /* Footer */
+        </style>
+
+<style> 
+/* Footer */
         footer {
-            text-align: center;
-            padding: 0.5rem 0;
-            color: var(--text-secondary);
-            border-top: 5px solid var(--border-color);
-        }
+    text-align: center;
+    padding: 1rem 0; /* Increased padding to show off the image */
+    color: var(--text-secondary);
+    border-top: 5px solid var(--border-color);
+    
+    /* Background Image Implementation */
+    position: relative;
+    background-image: url("images/chocolate.jpg.jpg"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    overflow: hidden;
+}
+
+/* Dark overlay to keep the copyright text readable */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85); /* Slightly darker than the contact section */
+    z-index: 1;
+}
+
+footer p {
+    position: relative;
+    z-index: 2;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
 
         /* Animations */
         @keyframes fadeInDown {
@@ -920,19 +1116,29 @@
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
-                <div class="hero-subtitle">Creative Freelancer</div>
+                <div class="hero-subtitle">Creative Freelance Services</div>
                 <h1 class="hero-title">
-                    Crafting Digital<br>
-                    <span class="highlight">Experiences</span>
+                    The Perfect Blend of<br>
+                    <span class="highlight">"Creativity and Performance"</span>
                 </h1>
                 <p class="hero-description">
                     I'm a passionate freelancer specializing in creating beautiful, functional digital products that help businesses grow and connect with their audience.
                 </p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-                    <a href="#work" class="btn btn-secondary">View My Work</a>
+              <div class="cta-buttons">
+    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+    <a href="#work" class="btn btn-secondary">View My Work</a>
+</div>
 
-                </div>
+<div class="hero-mini-icons">
+    <div class="mini-icon-item">
+        <i class="fas fa-handshake"></i>
+        <span>Partnership</span>
+    </div>
+    <div class="mini-icon-item">
+        <i class="fas fa-book-open"></i>
+        <span>Case Studies</span>
+    </div>
+</div>
             </div>
             <div class="video-background">
         <div class="video-overlay"></div>
@@ -957,7 +1163,7 @@
             </div>
                 <!-- About Text -->
                 <div class="about-text">
-                    <div class="about-label">About Me</div>
+                    
                     <h2 class="about-title">Passionate About Creating Digital Excellence</h2>
                     
                     <p class="about-description">
@@ -977,38 +1183,6 @@
                             When I'm not crafting digital experiences, you'll find me exploring new design trends, learning emerging technologies, or sharing knowledge with the creative community.
                         </p>
                     </div>
-
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-rocket highlight-icon"></i>
-                            <div class="highlight-text">
-                                <h4>Innovation Driven</h4>
-                                <p>Always exploring cutting-edge solutions</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-users highlight-icon"></i>
-                            <div class="highlight-text">
-                                <h4>Client-Focused</h4>
-                                <p>Your success is my priority</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-award highlight-icon"></i>
-                            <div class="highlight-text">
-                                <h4>Quality First</h4>
-                                <p>Attention to every detail</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-clock highlight-icon"></i>
-                            <div class="highlight-text">
-                                <h4>Timely Delivery</h4>
-                                <p>Meeting deadlines consistently</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1086,24 +1260,31 @@
                         </p>
                     </div>
                 </div>
+                <div class="portfolio-item" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+    <div class="portfolio-image">
+        <span class="portfolio-image-icon">🎬</span>
+        
+        <video class="portfolio-video-preview" muted loop playsinline>
+            <source src="Videoads.mp4.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="portfolio-content">
+        <div class="portfolio-category">Video Editing</div>
+        <h3 class="portfolio-title">Cinematic Brand Story</h3>
+        <p class="portfolio-description">
+            Professional color grading and seamless transition effects for high-impact promotional campaigns.
+        </p>
+    </div>
+</div>
                 <div class="portfolio-item">
-                    <div class="portfolio-image">📱</div>
+                    <div class="portfolio-image">🤖</div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">Mobile App</div>
-                        <h3 class="portfolio-title">Fitness Tracking App</h3>
+                        <div class="portfolio-category">Youtube AI Automation </div>
+                        <h3 class="portfolio-title"> Contents for Monetization Project</h3>
                         <p class="portfolio-description">
-                            Intuitive mobile app design for fitness enthusiasts with seamless workout tracking features.
-                        </p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">🛍️</div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-category">E-Commerce</div>
-                        <h3 class="portfolio-title">Online Store Platform</h3>
-                        <p class="portfolio-description">
-                            Custom e-commerce solution with modern design and streamlined checkout process.
-                        </p>
+                            Implementing end-to-end automation workflows—from AI script generation to automated voiceovers, Videos and scheduled publishing.
+        </p>
                     </div>
                 </div>
                 <div class="portfolio-item">
@@ -1140,6 +1321,8 @@
         </section>
 
         <!-- Contact Section -->
+
+
         <section class="contact-section" id="contact">
             <div class="container">
                 <h2 class="section-title">Let's Create Something Amazing</h2>
@@ -1149,21 +1332,18 @@
                 </p>
 
                 <div class="contact-actions">
-    <a href="mailto:deleonmike84@gmail.com" class="btn-primary icon-only">  
+    <a href="mailto:deleonmike84@gmail.com" class="email-icon-circle">  
         <i class="fas fa-envelope"></i>
     </a>
     
-    <a href="mailto:deleonmike84@gmail.com" class="email-oval">
+
+    <a href="mailto:deleonmike84@gmail.com" class="email-oval-text">
         deleonmike84@gmail.com
     </a>
-</div>
-
-
-                
-<section>        
-<h4>Connect & Follow!</h4>
-
-</section>
+</div>      
+              <div class="social-header">
+                <h4>Connect & Follow!</h4>
+    <i class="fas fa-share-nodes"></i>  </div>
                 <div class="social-links">
                     <a href="https://www.youtube.com/@MikeyD0531" class="social-link yt" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-youtube"></i>
